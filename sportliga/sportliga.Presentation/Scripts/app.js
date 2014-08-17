@@ -70,7 +70,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
        .state('VistaUser', {
            url: '/VistaUsuario',
            templateUrl: '/views/VistaUsuario',
-           controller: 'VistaUsuarioCtrl'
+           controller: 'ProfileCtrl'
 
        })
             .state('otherwise', {
