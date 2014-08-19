@@ -7,7 +7,7 @@ angular.module('app.controllers', [])
 
     // Path: /
     .controller('HomeCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
-        $scope.$root.title = 'SportLiga | Jimmy Ramos';
+        $scope.$root.title = 'SportLiga | Rafael Sequeiros';
         $scope.$on('$viewContentLoaded', function () {
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
@@ -71,6 +71,15 @@ angular.module('app.controllers', [])
     .controller('ProfileCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
         $scope.$root.title = 'SportLiga | Mi perfil';
         // TODO: Forgot password
+// ReSharper disable once WrongExpressionStatement
+        $scope.LigaRegistradas = [
+        {
+            nombre: 'Española'
+        },
+        {
+            nombre: 'Italiana'
+        }
+        ];
         $scope.ligas = [
         {
             nombre: 'Española', pais: 'España', inicio: new Date(),
@@ -100,7 +109,9 @@ angular.module('app.controllers', [])
         $scope.addNewLeague = function () {
             $scope.ligas.push({ nombre: $scope.NombreEquipo, IdLiga: $scope.IdLiga });
         };
-
+        $scope.RegisterInNewLeague = function() {
+            
+        }
     }])
 
       // Path: /league
