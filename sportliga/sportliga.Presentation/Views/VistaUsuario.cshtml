@@ -1,4 +1,9 @@
-﻿<link href="~/Views/profile.css" rel="stylesheet" type="text/css" />  d
+﻿
+<style type="text/css">.glyphicon-circle_plus { }
+
+ .glyphicon-circle_remove { }
+</style>
+<link href="~/Views/profile.css" rel="stylesheet" type="text/css" />  d
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
@@ -101,8 +106,10 @@
                 <li>
 
                     {{Registros.nombre}}
-                    <a href="user.html"><i class="glyphicon glyphicon-pencil"></i></a>
-                    <a href="#myModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-remove"></i></a>
+                    <a href="user.html"><i class="glyphicon glyphicon-leaf"></i></a>
+                   
+                    <a href="" ng-click="RemoveLigaRegister(Registros.nombre, Registros.pais,Registros.inicio,Registros.fin,Registros.cant_equipos,Registros.id)"><i class="glyphicon glyphicon-remove"></i></a>
+                
                 </li>
                 
                 
@@ -142,10 +149,44 @@
                 <td>{{liga.fin | date:'fullDate'}} </td>
                 <td>{{liga.cant_equipos}}</td>
                 <td>
-                    <a href="user.html"><i class="glyphicon glyphicon-pencil"></i></a>
+                    <a href="user.html"><i class="glyphicon glyphicon-leaf"></i></a>
+                    <a href="" ng-click="RegisterInNewLeague(liga.nombre, liga.pais,liga.inicio,liga.fin,liga.cant_equipos,liga.id)"><i class="glyphicon glyphicon-plus"></i></a>
                    
                 </td>
             </tr>
         </tbody>
     </table>
+</div>
+<div>
+    <h2>Calendario de partido has tu apuesta</h2>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                
+                                <th>Equipo</th>
+                                <th>Has tu Prediccion</th>
+                                <th style="width: 50px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="filter in Partidos">
+                                
+                                <td>{{filter.nombre}}</td>
+                                <td>{{filter.resultado}}</td>
+                                <td>
+                                    <a href="" ng-click="RemoveLiga(filter.nombre)"><i class="glyphicon glyphicon-pencil"></i></a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

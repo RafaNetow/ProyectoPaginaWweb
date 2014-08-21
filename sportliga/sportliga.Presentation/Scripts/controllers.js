@@ -72,12 +72,34 @@ angular.module('app.controllers', [])
         $scope.$root.title = 'SportLiga | Mi perfil';
         // TODO: Forgot password
 // ReSharper disable once WrongExpressionStatement
+        $scope.Partidos = [
+            {
+                equipo1: "RealMadrid",
+                equipo2: "Barcelona",
+                resultado1: "0",
+                resultado2: "0"
+            },
+        {
+        equipo1: "Brasil", equipo2: "Suieza",resultado1 :"0",resultado2 : "0"
+        },
+            {
+        equipo1: "Uruguay", equipo2: "Sevilla", resultado1: "1", resultado2: "2"
+            },
+            {
+                equipo1: "Honduras", equipo2: "Holanda",resultado1 :"1",resultado2 : "2"
+                
+            }
+
+        ];
+
         $scope.LigaRegistradas = [
         {
-            nombre: 'Española'
+            nombre: 'BioloRusia', pais: 'Japon', inicio: new Date(),
+            fin: new Date(), cant_equipos: 20, id:7
         },
         {
-            nombre: 'Italiana'
+            nombre: 'Española', pais: 'Inglaterra', inicio: new Date(),
+            fin: new Date(), cant_equipos: 20, id: 6
         }
         ];
         $scope.ligas = [
@@ -109,9 +131,35 @@ angular.module('app.controllers', [])
         $scope.addNewLeague = function () {
             $scope.ligas.push({ nombre: $scope.NombreEquipo, IdLiga: $scope.IdLiga });
         };
-        $scope.RegisterInNewLeague = function() {
-            
-        }
+        $scope.RegisterInNewLeague = function(nombres, paises, dateinicio,datefinal,cantequipos,ids) {
+            $scope.LigaRegistradas.push({ nombre: nombres , pais: paises, inicio: dateinicio, fin: datefinal, canequipos: cantequipos, id: ids});
+            $scope.RemoveLiga(nombres);
+        };
+        $scope.RemoveLigaRegister = function (nombres, paises, dateinicio, datefinal, cantequipos, ids)
+        {
+            $scope.ligas.push({ nombre: nombres, pais: paises, inicio: dateinicio, fin: datefinal, canequipos: cantequipos, id: ids });
+            $scope.RemovetheListRegister(nombres);
+
+        };
+        $scope.RemoveLiga = function (RemoveName) {
+            for (var i = 0; i < $scope.ligas.length; i++) {
+                if ($scope.ligas[i].nombre === RemoveName) {
+                    $scope.ligas.splice(i, 1);
+                    inicio();
+                }
+            }
+
+        };
+        $scope.RemovetheListRegister = function(RemoveName) {
+            for (var i = 0; i < $scope.LigaRegistradas.length; i++) {
+                if ($scope.LigaRegistradas[i].nombre === RemoveName) {
+                    $scope.LigaRegistradas.splice(i, 1);
+                    inicio();
+                }
+            }
+
+        };
+        
     }])
 
       // Path: /league
@@ -169,7 +217,7 @@ angular.module('app.controllers', [])
         $scope.cancelEdit = function (team) {
             $scope.isEditing = false;
         };
-
+        
         $scope.FinishEditing = function () {
             for (var i = 0; i < $scope.teams.length; i++) {
                 if ($scope.teams[i].nombre === $scope.NombreAnterior) 

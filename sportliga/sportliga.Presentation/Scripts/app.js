@@ -65,6 +65,13 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
                  templateUrl: '/views/newLeague',
                  controller: 'ProfileCtrl'
              })
+              .state('Addliga', {
+                  //  url: '/team/newTeam',
+                  url: '/Addliga',
+                  layout: 'basic',
+                  templateUrl: '/views/AddLiga',
+                  controller: 'ProfileCtrl'
+              })
 
         
        .state('VistaUser', {
@@ -73,6 +80,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
            controller: 'ProfileCtrl'
 
        })
+
             .state('otherwise', {
              url: '*path',
              templateUrl: '/views/404',

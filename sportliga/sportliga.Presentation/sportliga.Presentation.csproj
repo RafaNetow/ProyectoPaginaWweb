@@ -507,6 +507,7 @@
     <Content Include="Views\league.cshtml" />
     <Content Include="Views\newLeague.cshtml" />
     <Content Include="Views\VistaUsuario.cshtml" />
+    <Content Include="Views\AddLiga.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

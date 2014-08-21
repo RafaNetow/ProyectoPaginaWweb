@@ -42,11 +42,11 @@
     <div class="row clearfix">
         <div class="col-md-12 column">
                     <div class="user-image">
-                        <img src="http://www.gravatar.com/avatar/2ab7b2009d27ec37bffee791819a090c?s=100&d=mm&r=g" alt="Jimmy Ramos" title="Jimmy Ramos" class="img-circle">
+                        <img src="http://www.gravatar.com/avatar/2ab7b2009d27ec37bffee791819a090c?s=100&d=mm&r=g" alt="Rafael Sequeiros" title="Rafael Sequeiros" class="img-circle">
                     </div>
                     <div class="user-info-block">
                         <div class="user-heading">
-                            <h3>Jimmy Ramos</h3>
+                            <h3>Rafael Sequeiros</h3>
                             <span class="help-block">San Pedro Sula, HN</span>
                         </div>
                         <ul class="navigation">
@@ -130,8 +130,9 @@
                                 <td>{{liga.fin | date:'fullDate'}} </td>
                                 <td>{{liga.cant_equipos}}</td>
                                 <td>
-                                    <a href="user.html"><i class="glyphicon glyphicon-pencil"></i></a>
-                                    <a href="#myModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-remove"></i></a>
+                                    <a href="/Views/AddLiga.cshtml"><i class="glyphicon glyphicon-pencil"></i></a>
+                                   
+                                    <a href="" ng-click="activate(liga.nombre)"><i class="glyphicon glyphicon-remove"></i></a>
                                 </td>
                             </tr>
                         </tbody>
