@@ -66,7 +66,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
                  controller: 'ProfileCtrl'
              })
               .state('Addliga', {
-                  //  url: '/team/newTeam',
+                  //  url: '/vien/newTeam',
                   url: '/Addliga',
                   layout: 'basic',
                   templateUrl: '/views/AddLiga',

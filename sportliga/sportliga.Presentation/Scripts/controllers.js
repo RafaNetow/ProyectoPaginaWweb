@@ -159,9 +159,35 @@ angular.module('app.controllers', [])
             }
 
         };
-        
-    }])
+        /*$scope.NuevoInstertarLiga = [
+            {
+                nombre: '', pais: '', inicio: new Date(),
+                fin: new Date(), cant_equipos: 0, id: $stateParams.id
+            }
+        ];
+        */
+        /*
+        $scope.nuevoEquipo = function () {
+            NuevoInstertarLiga[0].nombre = $scope.NuevoNombre;
+            NuevoInstertarLiga[0].pais = $scope.NuevoNombreDePais;
+            NuevoInstertarLiga[0].inicio = $scope.NuevoFechaDeInicio;
+            NuevoInstertarLiga[0].fin = $scope.NuevoFechaDeFinalizacion;
+            NuevoInstertarLiga[0].cant_equipos = $scope.NuevaCantidadDeEquipos;
+            $scope.ligas.push($scope.NuevoInstertarLiga[0]);
 
+        };
+        */
+        /*
+        $scope.cancelGuardado = function () {
+            $scope.NuevoNombre = "";
+            $scope.NuevoNombreDePais = "";
+            $scope.NuevoFechaDeInicio = new Date();
+            $scope.NuevoFechaDeFinalizacion = new Date();
+            $scope.NuevaCantidadDeEquipos = 0;
+        };
+        */
+    }])
+   
       // Path: /league
     .controller('LeagueCtrl', ['$scope', '$location', '$window','$stateParams', function ($scope, $location, $window, $stateParams) {
         $scope.$root.title = 'SportLiga | Liga';
